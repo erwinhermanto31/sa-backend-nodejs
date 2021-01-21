@@ -9,6 +9,12 @@ const getList = async function(params) {
 }
 module.exports.getList = getList;
 
+const getById = async function(id) {
+    shift = await to(ShiftMysql.findOne({where:{id:id}}))
+    return shift
+}
+module.exports.getById = getById;
+
 const createShift = async function(params) {
     console.log('params')
     console.log(params)

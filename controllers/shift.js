@@ -36,13 +36,18 @@ const getAll = async function(req, res, next){
 }
 module.exports.getAll = getAll;
 
-const get = function(req, res){
+const getById = async function(req, res){
     res.setHeader('Content-Type', 'application/json');
-    let shift = req.shift;
+    
+    let  shift, shift_id, err;
+    shift_id = req.params.shiftId
 
-    return ReS(res, {shift:shift.toWeb()});
+    console.log(shift_id)
+    shift = await to(shiftUsecase.getById(shift_id))
+    console.log(shift.shift())
+    return ReS(res, {shift:shift[0][1]});
 }
-module.exports.get = get;
+module.exports.getById = getById;
 
 const update = async function(req, res){
     let err, shift, shift_id, data;

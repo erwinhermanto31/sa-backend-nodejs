@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/shifts', shift.create);
 router.get('/shifts', shift.getAll);
-router.get('/shifts/:shiftId', shift.get);
+router.get('/shifts/:shiftId', shift.getById);
 router.put('/shifts/:shiftId', shift.update);
 router.put('/shifts/delete/:shiftId', shift.remove);
 

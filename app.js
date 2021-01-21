@@ -15,10 +15,6 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.use('/sliders', express.static(__dirname + '/public/images/sliders'));
-app.use('/porto', express.static(__dirname + '/public/images/porto'));
-app.use('/teams', express.static(__dirname + '/public/images/teams'));
-
 cookieParser = require('cookie-parser');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
